@@ -71,10 +71,10 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>D:\waaw-v3\Games\wolfenstein the new order\wolfenstein the new order\include;D:\waaw-v3\Games\wolfenstein the new order\wolfenstein the new order\pch;D:\waaw-v3\Games\wolfenstein the new order\wolfenstein the new order;D:\waaw-v3\Games\wolfenstein the new order\wolfenstein the new order\pch;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)\include;$(ProjectDir)\pch;$(ProjectDir)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>D:\waaw-v3\Games\wolfenstein the new order\wolfenstein the new order\include;D:\waaw-v3\Games\wolfenstein the new order\wolfenstein the new order\pch;D:\waaw-v3\Games\wolfenstein the new order\wolfenstein the new order;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+    <IncludePath>$(ProjectDir)\include;$(ProjectDir)\pch;$(ProjectDir)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
