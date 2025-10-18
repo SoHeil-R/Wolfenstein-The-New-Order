@@ -7,5 +7,5 @@
 #include <render/settings.h>
 #include <utils/utils.h>
 
-inline HMODULE BaseAddress{};
+inline uintptr_t BaseAddress{};
 #endif //PCH_H

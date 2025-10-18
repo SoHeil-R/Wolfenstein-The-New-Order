@@ -10,7 +10,7 @@ DWORD MainThread(HMODULE Module)
     freopen_s(&Dummy, "CONIN$", "r", stdin);
     std::cout << "Loaded" << std::endl;
 
-    BaseAddress = GetModuleHandle(NULL);
+    BaseAddress = (uintptr_t)GetModuleHandleA(NULL);
 
     std::cout << "Base Address: " << (uintptr_t*)BaseAddress << std::endl;
 
@@ -19,6 +19,11 @@ DWORD MainThread(HMODULE Module)
 
     while (true)
     {
+        if (GetAsyncKeyState(VK_F1) & 1)
+        {
+            hooks::internal::NoRecoil();
+        }
+
         if (GetAsyncKeyState(VK_RSHIFT) & 0x8000 && GetAsyncKeyState(VK_LSHIFT) & 0x8000) {
             std::cout << "Unloaded!" << std::endl;
             break;

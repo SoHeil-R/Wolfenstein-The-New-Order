@@ -97,12 +97,23 @@ bool __stdcall render::Draw(HDC hDc)
         {
             ImGui::Begin("Wolfenstein: The New Order");
             {
+                ImGui::Checkbox("God mode", &Settings.inf_health);
                 ImGui::Checkbox("Infinite Ammo", &Settings.inf_ammo);
+
                 if (ImGui::Checkbox("No Recoil", &Settings.no_recoil))
                 {
                     hooks::internal::NoRecoil();
                 }
 
+                if (ImGui::Checkbox("No Spread", &Settings.no_spread))
+                {
+                    hooks::internal::NoSpread();
+                }
+
+                if (ImGui::Checkbox("No Sway", &Settings.no_sway))
+                {
+                    hooks::internal::NoSway();
+                }
 
 
             }
