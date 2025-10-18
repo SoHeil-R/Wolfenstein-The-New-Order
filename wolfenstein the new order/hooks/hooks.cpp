@@ -49,8 +49,7 @@ void hooks::initialize()
 
 	UpdateWeaponAmmo = utils::GetPatternAddress<UpdateAmmo>(MainModule, "\x48\x89\x5C\x24\x00\x57\x48\x83\xEC\x00\x01\x51", "xxxx?xxxx?xx");
 	ExecuteCommand = utils::GetPatternAddress<ExecuteCmd>(MainModule, "\x48\x89\x5C\x24\x00\x48\x89\x6C\x24\x00\x48\x89\x74\x24\x00\x48\x89\x7C\x24\x00\x41\x54\x48\x83\xEC\x00\x45\x33\xE4\x41\x8B\xF9", "xxxx?xxxx?xxxx?xxxx?xxxxx?xxxxxx");
-
-	HealthController = reinterpret_cast<HealthControl>(BaseAddress + 0x641850);
+	HealthController = utils::GetPatternAddress<HealthControl>(MainModule, "\x48\x89\x5C\x24\x00\x48\x89\x74\x24\x00\x57\x48\x83\xEC\x00\x48\x8B\xD9\x48\x8B\x0D\x00\x00\x00\x00\xBA", "xxxx?xxxx?xxxx?xxxxxx????x");
 
 	glSwapBuffers = reinterpret_cast<TWglSwapBuffers>(GetProcAddress(GetModuleHandleA("opengl32.dll"), "wglSwapBuffers"));
 
